@@ -1,0 +1,65 @@
+<!-- 
+Diferença do uso entre Javascript e JQuery
+Nesta pratica haverá dias versões de um mesmo código
+    - Versão de Javascript
+    - Versão do JQuery
+Ambos vão retornar exatamente o mesmo resultado, porem, será possível visualizar a diferença entre a sintaxe utilizada. 
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript x JQuery</title>
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <style>
+        .bloco-teste {
+            text-align: center;
+            border: 2px solid black;
+            border-radius: 20px;
+            margin-left: 40%;
+            margin-right: 40%;
+            align-self: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bloco-teste">
+        <label>Valor 1:</label>
+        <input id="v1" type="text" placeholder="Digite o primeiro valor..."><br><br>
+        <label>Valor 2:</label>
+        <input id="v2" type="text" placeholder="Digite o segundo valor..."><br><br>
+        <label>Resultado:</label>
+        <input id="res" type="text"><br><br>
+        <button id="btn-js">Soma Javascript</button>
+        <button id="btn-jq">Soma JQuery</button>
+    </div>
+
+    <script>
+        // JAVASCRIPT
+        let btn_Javascript = document.getElementById("btn-js").addEventListener("click", () => {
+            let valor1 = parseInt(document.getElementById("v1").value)
+            let valor2 = parseInt(document.getElementById("v2").value)
+            let soma = valor1 + valor2
+            let btn_Javascript = document.getElementById("btn-js")
+            let resultado = document.getElementById("res").value = soma
+        })
+
+        // JQUERY
+        $("#btn-jq").click(() => {
+            let valor1 = parseInt($("#v1").val())
+            let valor2 = parseInt($("#v2").val())
+            let soma = valor1 + valor2
+            let resultado = $("#res").val(soma)
+        })
+    </script>
+
+</body>
+
+</html>
