@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>Função ON</title>
+    <style>
+        body{
+            background-color: black;
+            color: whitesmoke;
+            font-size: 18px;
+        }
+        #bloco{
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            border: 2px solid white;
+            border-radius: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="bloco">
+        <p id="texto">Texto de exemplo</p>
+    </div>
+
+    <script>
+        $("#bloco").on({
+            click:()=>{$("#texto").text("Você clicou no quadrado")},
+            dblclick:()=>{$("#texto").text("Você clicou no quadrado 2x")},
+            mouseenter:()=>{$("#texto").text("Mouse entrou no quadrado")},
+            mouseleave:()=>{$("#texto").text("Mouse saiu do quadrado")}
+        })
+    </script>
+    
+</body>
+</html>
