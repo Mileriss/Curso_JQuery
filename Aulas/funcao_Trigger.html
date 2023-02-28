@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>Função TRIGGER</title>
+    <style>
+        body {
+            background-color: black;
+            color: whitesmoke;
+            font-size: 18px;
+        }
+
+        #principal {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #bloco1 {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            border: 2px solid white;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        #bloco2 {
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            border: 2px solid white;
+            border-radius: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="principal">
+        <div id="bloco1"></div>
+        <div id="bloco2"></div>
+    </div>
+
+    <script>
+        //TRIGGER: É uma forma de acionar um evento sem necessariamente acionar o evento
+        // Por exemplo, neste caso o evento de clique está direcionado ao "bloco1", porem, com o uso do Trigger é possível que o "bloco2" acione o evento do "bloco1"
+        // Então ao clicarmoms no bloco2, o evento do bloco1 será ativado. O que possibilita manipular o evento de 1 elemento clicando em outros elementos
+        $("#bloco1").click(() => {
+            $("#bloco1").text("Você clicou no botão")
+        })
+        $("#bloco2").click(() => {
+            $("#bloco1").trigger("click")
+        })
+    </script>
+
+</body>
+
+</html>
