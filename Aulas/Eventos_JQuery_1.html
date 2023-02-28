@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>Eventos em JQuery I</title>
+    <style>
+        body {
+            background-color: black;
+            color: whitesmoke;
+        }
+
+        #bloco {
+            width: 200px;
+            height: 200px;
+            background-color: rebeccapurple;
+            border: 2px solid white;
+            border-radius: 20px;
+        }
+
+        #texto {
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bloco">
+        <p id="texto">Texto de teste</p>
+    </div>
+    <br><br>
+    <div id="campo">
+        <label id="label">Digite algo:</label>
+        <input id="input" placeholder="Digite aqui...">
+        <p id="txt-dig"></p>
+    </div>
+
+    <script>
+        // Eventos de CLIQUE
+        // Vai exibir um novo texto ao clicar no quadrado
+        $("#bloco").click(() => {
+            $("#texto").text("Você clicou no quadrado")
+        })
+        $("#bloco").dblclick(() => {
+            $("#texto").text("Você clicou no quadrado 2x")
+        })
+
+        //Eventos de MOUSE
+        // Vai exibir um novo texto ao mexer no quadrado com o mouse
+        $("#bloco").mouseenter(() => {
+            $("#texto").text("Você está dentro do quadrado")
+        })
+        $("#bloco").mouseleave(() => {
+            $("#texto").text("Você saiu do quadrado")
+        })
+
+        //Eventos de TECLAS 
+        // Vai exibir o texto que for digitado no campo
+        $("#campo").keyup(()=>{
+            $("#txt-dig").text($("#input").val())
+        })
+    </script>
+</body>
+
+</html>
