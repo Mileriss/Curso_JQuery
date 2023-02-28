@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--JQUERY-->
     <script src="https://code.jquery.com/jquery-3.6.3.js"
-    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
     <title>Função ON</title>
     <style>
-        body{
+        body {
             background-color: black;
             color: whitesmoke;
             font-size: 18px;
         }
-        #bloco{
+
+        #bloco {
             width: 200px;
             height: 200px;
             background-color: rebeccapurple;
@@ -24,19 +26,24 @@
         }
     </style>
 </head>
+
 <body>
     <div id="bloco">
         <p id="texto">Texto de exemplo</p>
     </div>
 
     <script>
+        // Função ON
+        // Essa função permite adicionar diversos eventos em um unico escopo
+        // Se desejar mais de uma função para determinado elemento, o método/função ON permite que você organize tudo em um unico local
         $("#bloco").on({
-            click:()=>{$("#texto").text("Você clicou no quadrado")},
-            dblclick:()=>{$("#texto").text("Você clicou no quadrado 2x")},
-            mouseenter:()=>{$("#texto").text("Mouse entrou no quadrado")},
-            mouseleave:()=>{$("#texto").text("Mouse saiu do quadrado")}
+            click: () => { $("#texto").text("Você clicou no quadrado") },
+            dblclick: () => { $("#texto").text("Você clicou no quadrado 2x") },
+            mouseenter: () => { $("#texto").text("Mouse entrou no quadrado") },
+            mouseleave: () => { $("#texto").text("Mouse saiu do quadrado") }
         })
     </script>
-    
+
 </body>
+
 </html>
