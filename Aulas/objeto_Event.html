@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>Objeto EVENT</title>
+    <style>
+        body {
+            background-color: black;
+            color: whitesmoke;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="texto"></p>
+
+</body>
+<script>
+    //EVENT: É um objeto utilizado no código para retornar informações especificas sobre um determinado evento
+    // É possível utilizar esse objeto quando precisamos saber alguma informação na qual não teriamos controle sem a ajuda do computador
+    // Neste exemplo abaixo vamos utilizar as informações de posição do mouse (Horizontal e Vertical)
+    let pos_x = 0
+    let pos_y = 0
+    //DOCUMENT: Significa quando desejamos manipular a página, e não apenas um elemento. Neste caso estamos nos referindo a toda a página
+    $(document).mousemove((event)=>{
+        pos_x=event.pageX //Posição horizontal do cursor do mouse
+        pos_y=event.pageY //Posição vertical do cursor do mouse
+        $("#texto").text("Posição Horizontal: " + pos_x + "px" + " / " + "Posição Vertical: " + pos_y + "px ")
+    })
+</script>
+
+</html>
