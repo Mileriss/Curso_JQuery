@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>stopPropagation</title>
+    <style>
+        div{
+            border: 2px solid black;
+        }
+        p{
+            border: 2px solid red;
+        }
+        span{
+            border: 2px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>TAG: P</p>
+        <span>TAG: Span</span>
+    </div>
+
+    <script>
+        //A função stopPropagation é utilizada com intuito de parar a propagação de um evento relacionado a uma tag ou elemento da página
+        //Caso o evento esteja em um elemento dentro de uma DIV, a propagação do evento vai ocorrer para todos os elementos que estiverem dentro da DIV
+        //Ou seja, se todos os elementos da DIV conterem eventos diferentes, ao ser acionado um evento, consequentemente vai propagar todos os eventos nos elementos armazenados na DIV
+        //Caso queira que apenas um evento em especifico seja propagado, basta utilizar o stopPropagation e os outros não serão ativados
+
+        // Eventos de click com alert
+        $("div").click(()=>{alert("Evento disparado na DIV")})
+        $("p").click(()=>{alert("Evento disparado no P")})
+        $("span").click(()=>{event.stopPropagation(),alert("Evento disparado no SPAN")}) //Caso seja clicado, disparara apenas o evento do span, não acionará os outros
+    </script>
+    
+</body>
+</html>
