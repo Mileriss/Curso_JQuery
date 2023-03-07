@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+        integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>Children, Find</title>
+</head>
+
+<body>
+    <div>
+        <ol>
+            <li>
+                <p>Exemplo 1</p>
+                <p>Exemplo 2</p>
+                <p>Exemplo 3</p>
+            </li>
+        </ol>
+        <ol>
+            <li>
+                <p>Exemplo 1</p>
+                <p>Exemplo 2</p>
+                <p>Exemplo 3</p>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        //Existe uma hierarquia com relação aos elementos, o elemento posterior ao elemento atual será considerado o "filho" e pode ser manipulado com a função Parent
+        //Exemplo: Body é o filho do elemento HTML
+
+        //CHILDREN: Vai apontar para o elemento "Filho" com relação ao elemento atual
+        $("div").children().css({ "border": "2px solid red" }) //OL é o FILHO do elemento DIV
+        $("ol").children().css({ "border": "2px solid blue" }) //LI é o FILHO do elemento OL
+        $("li").children().css({ "border": "2px solid green" }) //P é o FILHO do elemento LI
+
+        //FIND: Vai apontar para o elemento "Filho" que você determinar
+        $("div").find("li").css({ "background-color": "pink" }) //Vai manipular o filho LI da div e nenhum outro
+        $("div").find("li:first").css({"color":"blue"}) //Vai manipular o PRIMEIRO filho LI e nenhum outro
+        $("div").find("li:last").css({"color":"red"}) //Vai manipular o ULTIMO filho LI e nenhum outro
+        $("div").find("*").css({"color":"orangered"}) //Vai manipular TODOS os filhos
+    </script>
+</body>
+
+</html>
