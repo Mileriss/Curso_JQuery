@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>Siblings, Next e Prev</title>
+</head>
+<body>
+    <div>
+        <span>
+            <h1 id="siblings">Siblings (Irmãos) -> Irmão 1</h1>
+            <h2>Irmão 2</h2>
+            <h3>Irmão 3</h3>
+            <h4>Irmão 4</h4>
+            <h5>Irmão 5</h5>
+            <h6>Irmão 6</h6>
+        </span>
+        <span>
+            <h1 id="next">Next (Próximo Irmão) -> Irmão 1</h1>
+            <h2>Irmão 2</h2>
+            <h3>Irmão 3</h3>
+            <h4>Irmão 4</h4>
+            <h5>Irmão 5</h5>
+            <h6>Irmão 6</h6>
+        </span>
+        <span>
+            <h1>Prev (Irmão Anterior) -> Irmão 1</h1>
+            <h2>Irmão 2</h2>
+            <h3>Irmão 3</h3>
+            <h4>Irmão 4</h4>
+            <h5>Irmão 5</h5>
+            <h6  id="prev">Irmão 6</h6>
+        </span>
+    </div>
+
+    
+
+    <script>
+        //SIBLINGS: São os irmãos que estão localizados dentro de uma hierarquia de tags. Neste caso, os irmãos serão "h1" e "p"
+        //Atráves do método Siblings é possível manipular as caracteristicas dos irmãos dentro de uma tag PAI
+        $("#siblings").siblings().css({"border":"1px solid red"}) //Todos os irmãos
+        $("#siblings").siblings("h3").css({"border":'1px dashed red'}) //Apenas os irmãos com a tag H3
+
+        // NEXT: Método direcionado a apontar para o próximo irmão dentro da hierarquia
+        $("#next").next().css({"border":'1px solid blue'}) //O próximo na hierarquia
+        $("#next").nextAll().css({"border":'1px dashed blue'}) //Todos os próximos 
+        $("#next").nextUntil("h3").css({"border":'1px dotted blue'}) //Apenas até a tag H3
+
+        //PREV: Método direcionado a apontar para o irmão anterior dentro da hierarquia
+        $("#prev").prev().css({"border":'1px solid green'}) //O anterior na hierarquia
+        $("#prev").prevAll().css({"border":'1px dashed green'}) // Todos os anteriores
+        $("#prev").prevUntil("h3").css({"border":'1px dotted green'}) //Apenas até a tag H3
+    </script>
+</body>
+</html>
