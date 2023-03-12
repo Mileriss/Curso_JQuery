@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--JQUERY-->
+    <script src="https://code.jquery.com/jquery-3.6.3.js"
+    integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+    <title>Parent, Parents</title>
+</head>
+<body>
+    <div>
+        <ol>
+            <li>
+                <p>Primeiro item</p>
+                <p>Segundo item</p>
+                <p>Terceiro item</p>
+            </li>
+        </ol>
+    </div>
+
+    <script>
+        //Existe uma hierarquia com relação aos elementos, o elemento anterior ao elemento atual será considerado o "pai" e pode ser manipulado com a função Parent
+        //Exemplo: HTML é pai do Head e do Body
+
+        //PARENT: Vai apontar para o elemento "pai" do elemento que está sendo indicado.
+        $("p").parent().css({"border":"2px solid red"}) //P é FILHO de LI | LI é PAI de P
+        $("li").parent().css({"border":"2px solid green"}) //LI é FILHO de OL | OL é PAI de LI
+        $("ol").parent().css({"border":"2px solid blue"}) //OL é FILHO de DIV | DIV é PAI de OL
+        $("div").parent().css({"border":"2px solid brown"}) //DIV é FILHO de BODY | BODY é PAI de DIV
+        $("body").parent().css({"background-color":"lightblue"}) //BODY é FILHO de HTML | HTML é PAI de TODOS OS ELEMENTOS
+
+        //PARENTS: Vai apontar para todos os elementos anteriores ao elemento que está sendo indicado.
+        $("p").parent().css({"font-size":"30px"})
+
+        //PARENTUNTIL: Vai apontar para todos os elementos anteriores ATÉ um determinado elemento, que deve ser indicado.
+        $("p").parentsUntil("div").css({"border":"5px dashed yellow"})
+    </script>
+    
+</body>
+</html>
